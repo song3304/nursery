@@ -1,0 +1,106 @@
+body {
+	height:100%;
+	background-color:#F8F8F8;}
+.back a {
+	color:#FFF;}
+a.back:hover {
+	text-decoration:none;
+}
+.back a img {
+	width:5.47%;
+	vertical-align:text-bottom;
+	margin:0;
+	padding:0;
+	margin-left:2.66%;
+	margin-right:2.66%;
+}
+
+.ps-back{background-color: #f4769b;width: 100%;height: 60px;line-height: 60px;}
+.ps-back img{height: 20px;margin-left: 15px;display: inline-block;}
+.ps-info{padding-top:40px;padding-bottom: 20px;}
+.ps-info img:first-child{}
+.ps-info p{padding: 20px 12%;font-size: 1.2em;color: #999999;font-weight: 500;font-family:"微软雅黑";}
+.ps-info .ps-share{padding: 0;border-bottom: 1px solid #f2f2f2;}
+.ps-info .ps-share>img{width: 100%;border-top: 1px solid #f2f2f2;}
+
+.ps-store{}
+.ps-store img{width: 100%;}
+.ps-store p{font-size: 1.2em;color: #999999;margin: 0;position: relative;height: 50px;line-height: 50px;}
+.ps-store p>b{width: 50%;white-space: nowrap;overflow: hidden;display: inline-block;text-overflow: ellipsis;}
+.ps-store p>span{position: absolute;right: 15px;}
+.ps-store p>span>i{color: #f4769b}
+
+
+
+.paytitle{padding:0 15px;font-size: 1.2em;height: 20px;line-height: 20px; font-weight: 700;}
+
+.setpay{background-color:#ffffff;height: 60px;margin-bottom: 10px;}
+.setpay label{display: inline-block;padding: 0;margin: 0;height: 60px;}
+.setpay label div{margin: 0;padding: 0}
+.setpay .radio{}
+.setpay .radio input{margin:22.5px 0 0 20px;padding:0;height: 15px;width: 15px;}
+.setpay h6{margin:0;font-size: 0.8em;font-weight: 500;padding: 0;font-weight: 700;margin-top: 10px;height: 20px;line-height: 20px;}
+.setpay small{margin:0;padding:0;font-size: 0.8em;font-weight: 500;height: 20px;line-height: 20px;}
+.setpay img{width:30px;height:30px;margin-top: 15px;}
+
+.paynum{height: 80px;}
+.paynum h4{height: 60px;line-height: 60px; background-color: #ffffff;}
+.paynum small{height: 20px;}
+
+.payfooter{position: fixed;bottom: 0;left: 0;right: 0;height: 60px;line-height: 60px; width:100%;}
+.payfooter .paycount{background-color: #ffffff;font-size: 1.2em;font-weight: 500;color: #555555;padding: 0}
+.payfooter .paycount span{color: #a60014;}
+.payfooter .paygopay{height: 60px;text-decoration: none;font-size: 1.6em;font-weight: 700; color: #ffffff;background-color: #a60014;display: inline-block;padding:0;}
+
+/*
+paysuccess
+ */
+
+.pay-order-num{color: #555555;font-size: 1em;height: 50px;line-height: 50px;background-color: #ffffff;margin-top: 3%;}
+.pay-order-num p{}
+.pay-order-num span{color: #a60014;}
+
+.pay-success  {height: 50%; padding-top:5%;border-top: 1px solid #e5e5e5;background-color: #ffffff;}
+.pay-success h5{padding:0 10%;}
+
+.pay-other{margin-top: 5%;}
+#draw_bt {
+	width:37.83%;
+	margin:0;
+	padding:0;
+	display:block;
+	position:absolute;
+	margin-left:50%;
+	transform:translateX(-50%);
+	-webkit-transform:translateX(-50%);
+	-ms-transform:translateX(-50%);
+	-moz-transform:translateX(-50%);
+	bottom:7px;
+	box-shadow:2px 2px 10px #888888;
+	border-radius:2px;
+	animation:framebt 0.3s ease infinite alternate 1s;
+	-webkit-animation:framebt 0.3s ease infinite alternate 1s;
+	-ms-animation:framebt 0.3s ease infinite alternate 1s;
+	-moz-animation:framebt 0.3s ease infinite alternate 1s;
+}
+@keyframes framebt {
+	0%{bottom:7px;box-shadow:2px 2px 10px #888888;}
+	100%{bottom:5px;box-shadow:0px 0px 10px #888888;}
+}
+@-webkit-keyframes framebt {
+	0%{bottom:7px;box-shadow:2px 2px 10px #888888;}
+	100%{bottom:5px;box-shadow:0px 0px 10px #888888;}
+}
+@-ms-keyframes framebt {
+	0%{bottom:7px;box-shadow:2px 2px 10px #888888;}
+	100%{bottom:5px;box-shadow:0px 0px 10px #888888;}
+}
+@-moz-keyframes framebt {
+	0%{bottom:7px;box-shadow:2px 2px 10px #888888;}
+	100%{bottom:5px;box-shadow:0px 0px 10px #888888;}
+}
+#draw_bt img {
+	width:100%;
+	margin:0;
+	padding:0;
+}
