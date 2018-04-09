@@ -128,7 +128,7 @@ class CreateNurseriesTable extends Migration
 		//成长-学生
 		Schema::create('ceanza_student', function (Blueprint $table) {
 		    $table->integer('sid')->unsigned()->comment = '用户ID';
-		    $table->integer('cid')->comment = '成长id';
+		    $table->integer('cid')->unsigned()->comment = '成长id';
 		    
 		    $table->foreign('sid')->references('id')->on('users')
 		       ->onUpdate('cascade')->onDelete('cascade');
@@ -140,14 +140,14 @@ class CreateNurseriesTable extends Migration
 		 //成长-教师
 		 Schema::create('ceanza_teacher', function (Blueprint $table) {
 		    $table->integer('tid')->unsigned()->comment = '用户ID';
-		    $table->integer('cid')->comment = '成长id';
+		    $table->integer('cid')->unsigned()->comment = '成长id';
 		    
 		    $table->foreign('tid')->references('id')->on('users')
 		       ->onUpdate('cascade')->onDelete('cascade');
 		    $table->foreign('cid')->references('id')->on('ceanzas')
 		       ->onUpdate('cascade')->onDelete('cascade');
 		    
-		    $table->primary(['tid', 'cit']);
+		    $table->primary(['tid', 'cid']);
 		 });
 		 //相册
 		 Schema::create('albums', function (Blueprint $table) {
@@ -163,7 +163,7 @@ class CreateNurseriesTable extends Migration
 	    //相册-学生
 		Schema::create('album_student', function (Blueprint $table) {
 		    $table->integer('sid')->unsigned()->comment = '学生ID';
-		    $table->integer('aid')->comment = '相册id';
+		    $table->integer('aid')->unsigned()->comment = '相册id';
 		     
 		    $table->foreign('sid')->references('id')->on('users')
 		      ->onUpdate('cascade')->onDelete('cascade');
@@ -175,7 +175,7 @@ class CreateNurseriesTable extends Migration
 		//相册-教师
 		Schema::create('album_teacher', function (Blueprint $table) {
 		    $table->integer('tid')->unsigned()->comment = '教师ID';
-		    $table->integer('aid')->comment = '相册id';
+		    $table->integer('aid')->unsigned()->comment = '相册id';
 		     
 		    $table->foreign('tid')->references('id')->on('users')
 		      ->onUpdate('cascade')->onDelete('cascade');
