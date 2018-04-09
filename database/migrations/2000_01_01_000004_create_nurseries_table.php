@@ -2,7 +2,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateWatersTable extends Migration
+class CreateNurseriesTable extends Migration
 {
 	/**
 	 * Run the migrations.
