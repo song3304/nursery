@@ -75,6 +75,16 @@ class User extends Authenticatable
 		$users = static::search()->where(['username', 'nickname', 'realname', 'phone', 'email'], $keywords)->take(2000)->keys();
 		return $builder->whereIn($this->getKeyName(), $users);
 	}
+	//学生与年级之间的关系--读过所有班级
+	public function all_grades()
+	{
+	    return $this->belongsToMany('App\\Grade', 'student_grade', 'sid', 'gid');
+	}
+	//学生与年级之间的关系-现读几年级
+	public function grades()
+	{
+	    return $this->all_grades()->withPivot('is_now',1);
+	}
 }
 
 //自动创建extra等数据

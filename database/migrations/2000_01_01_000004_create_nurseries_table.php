@@ -32,6 +32,7 @@ class CreateNurseriesTable extends Migration
 	        $table->text('contents')->nullable()->comment = '问题内容';
 	        $table->softDeletes(); //软删除
 	           
+	        $table->primary(['id']);
 	        $table->foreign('id')->references('id')->on('users')
 	            ->onUpdate('cascade')->onDelete('cascade');
 	        $table->timestamps();
@@ -40,6 +41,7 @@ class CreateNurseriesTable extends Migration
 	    Schema::create('teacher_grade', function (Blueprint $table) {
 	       $table->integer('gid')->unsigned()->index()->comment = '班级ID';
 	       $table->integer('tid')->unsigned()->index()->comment = '教师ID';
+	       $table->tinyInteger('is_now')->index()->default(0)->comment == '是否现任班级，0.否 1.是';
 	       $table->foreign('gid')->references('id')->on('grades')
 	       ->onUpdate('cascade')->onDelete('cascade');
 	       $table->foreign('tid')->references('id')->on('users')
@@ -52,6 +54,7 @@ class CreateNurseriesTable extends Migration
 	    Schema::create('student_grade', function (Blueprint $table) {
 	       $table->integer('gid')->unsigned()->index()->comment = '班级ID';
 	       $table->integer('sid')->unsigned()->index()->comment = '学生ID';
+	       $table->tinyInteger('is_now')->index()->default(0)->comment == '是否现读班级，0.否 1.是';
 	       $table->foreign('gid')->references('id')->on('grades')
 	           ->onUpdate('cascade')->onDelete('cascade');
 	       $table->foreign('sid')->references('id')->on('users')
@@ -66,7 +69,7 @@ class CreateNurseriesTable extends Migration
 	       $table->string('name',250)->comment='家长名';
 	       $table->string('relation',10)->comment='称谓:父亲、母亲等';
 	       $table->softDeletes(); //软删除
-	           
+	         
 	       $table->foreign('id')->references('id')->on('users')
 	            ->onUpdate('cascade')->onDelete('cascade');
 	       $table->timestamps();
