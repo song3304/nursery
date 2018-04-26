@@ -159,6 +159,7 @@ class CreateNurseriesTable extends Migration
 		    $table->unsignedInteger('pic_id')->default(0)->comment = '文章图片';
 		    $table->string('descript',50)->nullable()->comment = '图片描述';
 		    $table->integer('grade_id')->unsigned()->comment = '年级ID';
+		    $table->integer('class_id')->unsigned()->comment = '相册ID';
 		    $table->timestamps();
 		    $table->softDeletes(); //软删除
 		});
@@ -187,6 +188,22 @@ class CreateNurseriesTable extends Migration
 		     
 		    $table->primary(['tid', 'aid']);
 		});
+		//相册分类
+		Schema::create('album_classes', function (Blueprint $table) {
+		    $table->increments('id');
+		    $table->integer('grade_id')->unsigned()->comment = '年级ID';
+		    $table->string('name', 150)->index()->comment = '英文名称';
+		    $table->string('title', 150)->comment = '名称';
+		    $table->string('description', 250)->nullable()->comment = '';
+		    $table->text('extra')->nullable()->comment = '扩展数据';
+		    $table->unsignedInteger('pid')->index()->default(0)->comment = '父ID';
+		    $table->unsignedInteger('level')->index()->default(0)->comment = 'tree level';
+		    $table->text('path')->nullable()->comment = 'tree path';
+		    $table->unsignedInteger('order_index')->default(0)->index()->comment = 'tree order';
+		    $table->timestamps();
+		    $table->softDeletes();
+		    
+		    $table->unique(['grade_id', 'name']);		});
 		//发现banner
 		Schema::create('banners', function (Blueprint $table) {
 		    $table->increments('id');

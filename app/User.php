@@ -85,6 +85,16 @@ class User extends Authenticatable
 	{
 	    return $this->all_grades()->withPivot('is_now',1);
 	}
+	//学生与成长日记 的关系 
+	public function ceanzas()
+	{
+	    return $this->belongsToMany('App\\Ceanza', 'ceanza_student', 'sid', 'cid');
+	}
+	//学生与相册关系
+	public function albums()
+	{
+	    return $this->belongsToMany('App\\Album', 'album_student', 'sid', 'aid');
+	}
 }
 
 //自动创建extra等数据

@@ -28,4 +28,14 @@ class Teacher extends Model
     {
         return $this->grades()->get(['grades.id'])->pluck('id');
     }
+    //老师与成长日记关系
+    public function ceanzas()
+    {
+        return $this->belongsToMany('App\\Ceanza', 'ceanza_teacher', 'tid', 'cid');
+    }
+    //老师与相册关系
+    public function albums()
+    {
+        return $this->belongsToMany('App\\Album', 'album_teacher', 'tid', 'aid');
+    }
 }
